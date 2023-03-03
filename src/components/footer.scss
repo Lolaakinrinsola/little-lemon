@@ -1,0 +1,14 @@
+$highlight2:#333333;
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 3em 10em;
+    background-color: $highlight2;
+    color: white;
+
+    li{
+        list-style: none;
+        padding: .5em 0;
+    }
+}

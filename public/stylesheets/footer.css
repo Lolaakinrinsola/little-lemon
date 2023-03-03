@@ -1,0 +1,13 @@
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3em 10em;
+  background-color: #333333;
+  color: white;
+}
+footer li {
+  list-style: none;
+  padding: 0.5em 0;
+}
+
+/*# sourceMappingURL=footer.css.map */

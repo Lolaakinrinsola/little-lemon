@@ -1,0 +1,15 @@
+$secondarycolor:#EE9972;
+
+form{
+    margin: 7em 10em;
+    padding: 2em 4em;
+    margin-bottom: 4em;
+    display: grid;
+    border: solid $secondarycolor .5px;
+    h1{
+        text-align: center;
+    }
+    input,select,button{
+        margin: 1em 0;
+    }
+}

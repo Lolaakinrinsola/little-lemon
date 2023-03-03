@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 import Card from './Card'
 import './home.scss'
 import RatingCard from './RatingCard'
@@ -52,7 +53,7 @@ const Home = () => {
                 but casual environment. The restaurant features a locally-soured 
                 menu with daily specials
             </p>
-            <button>RESERVATION</button>
+            <button><Link to='/reservations' className='drawerLink'>RESERVATION</Link></button>
         </div>
         <div>
             <img src="" alt="" />
