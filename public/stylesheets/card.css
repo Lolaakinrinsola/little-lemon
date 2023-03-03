@@ -1,0 +1,11 @@
+#menu {
+  width: 20em;
+  display: grid;
+  background-color: #EDEFEE;
+  border-radius: 16px;
+}
+#menu div {
+  padding: 1em 2em;
+}
+
+/*# sourceMappingURL=card.css.map */

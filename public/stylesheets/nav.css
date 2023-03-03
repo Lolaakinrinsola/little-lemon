@@ -1,0 +1,14 @@
+#navbar {
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
+}
+#navbar ul {
+  display: flex;
+}
+#navbar ul li {
+  list-style: none;
+  padding: 0 1em;
+}
+
+/*# sourceMappingURL=nav.css.map */

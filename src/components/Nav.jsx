@@ -1,8 +1,9 @@
 import React from 'react'
+import './nav.scss';
 
 const Nav = () => {
   return (
-    <div>
+    <div id='navbar'>
       <div>
         <ul>
             <li>HOME</li>

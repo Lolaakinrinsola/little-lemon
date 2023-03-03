@@ -1,0 +1,12 @@
+#rating {
+  background-color: whitesmoke;
+  width: 10em;
+  border-radius: 16px;
+  padding: 1em 1em;
+  margin-top: 3em;
+}
+#rating #card {
+  display: flex;
+}
+
+/*# sourceMappingURL=rating.css.map */

@@ -1,0 +1,49 @@
+.header {
+  margin: 0;
+}
+.header header {
+  background-color: #495E47;
+  padding: 5em 10em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.header header h1 {
+  margin-top: 0;
+}
+
+body .specials {
+  padding: 3em 10em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+body .specials div {
+  display: grid;
+  justify-content: end;
+}
+body .specials button {
+  width: 10em;
+}
+body #menuCard, body #ratingcard {
+  padding: 0 10em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+body #ratings {
+  display: grid;
+  padding: 9em 0;
+  margin-top: 5em;
+  background-color: #F4CE14;
+}
+body #ratings h1 {
+  text-align: center;
+  margin: 0;
+}
+body #ratingcard {
+  grid-template-columns: repeat(4, 1fr);
+}
+body .headerbody {
+  background-color: white;
+  padding-top: 10em;
+}
+
+/*# sourceMappingURL=home.css.map */

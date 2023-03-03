@@ -1,0 +1,12 @@
+$highlightcolor:#EDEFEE;
+
+#menu{
+    width: 20em;
+    display: grid;
+    background-color: $highlightcolor;
+    border-radius: 16px;
+
+    div{
+        padding: 1em 2em;
+    }
+}
