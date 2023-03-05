@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
-import Reservation from './components/Reservation';
+import BookingPage from './components/BookingPage';
 import CustomerDetails from './components/CustomerDetails';
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<Homepage/>}/>
-          <Route path="/reservations" element={<Reservation/>}/>
+          <Route path="/reservations" element={<BookingPage/>}/>
           <Route path="/reservations/customer-details" element={<CustomerDetails/>}/>
         </Routes>
       </Router>
