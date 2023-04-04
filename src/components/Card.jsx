@@ -3,18 +3,18 @@ import './card.scss'
 const Card = (props) => {
   return (
     <div id='menu'>
-      <img src="" alt="" />
-      <div>
-        <h3>{props.title}</h3>
-        <h3>{props.price}</h3>
+      <img src={props.image} alt="specials" className='w-full max-h-[12em]'/>
+      <div className='flex justify-between'>
+        <h3 className='font-bold '>{props.title}</h3>
+        <h3 className='text-[#efb6a8]'>{props.price}</h3>
       </div>
       <div>
 
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis voluptatum quibusdam, ducimus fuga modi doloribus odio similique, amet asperiores expedita molestiae hic, quis sed cum quam maxime. In, asperiores architecto.</p>
+        <p>{props.text}</p>
       </div>
 
       <div>
-        <p>dessss</p>
+        <p className='font-medium'>order a delivery</p>
       </div>
     </div>
   )

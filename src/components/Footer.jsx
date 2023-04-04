@@ -1,9 +1,10 @@
 import React from 'react'
 import './footer.scss';
+import footer from '../image/footer.png'
 const Footer = () => {
   return (
-    <footer>
-        <img src="" alt="" />
+    <footer className='p-[2em] gap-[4em] md:px-[7em] md:py-[5em]'>
+        <img src={footer} alt="" className='rounded-[16px]'/>
         <ul>
             <li>Navigation</li>
             <li>Home</li>

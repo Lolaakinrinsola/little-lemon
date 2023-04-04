@@ -1,63 +1,64 @@
 import React,{useState} from 'react'
 import './reservation.scss'
 import {Link} from "react-router-dom";
+import { Formik } from 'formik';
+import Spinner from './Spinner';
+import { useNavigate } from "react-router-dom";
+import ReactLoading from "react-loading";
 
-const BookingForm = (props) => {
-    
-    const [reservation, setReservation]= useState({
-        enteredDate:'',
-        enteredTime:'',    
-    })
-    
+const BookingForm = ({name, date,enter,submitt}) => {
+    const [selectedDate, setSelectedDate] = useState('');
+    const [submit, setSubmit] = useState(false);
+  const navigate = useNavigate();
 
-    const dateChange=(event)=>{
-        setReservation((prevState)=>{
-            return{
-                ...prevState,
-                enteredDate:event.target.value
-            }
-        });
+    console.log(submit)
+
+    const handleSubmit=()=>{
+        setSubmit(!submit)
+        submitt(submit)  
+        setTimeout(() => {
+            navigate("/reservations/customer-details")
+        }, 1000);     
     }
-        console.log(reservation)
-
-    const updateTimes=(event)=>{
-        reservation.enteredDate=event.target.value
-    }
-
-    const submitHandler=(event)=>{
-        event.preventDefault();
-        const bookingInfo={
-            date: new Date(enteredDate),
-            time: enteredTime,
-        };
-    
-        props.onAddTime(bookingInfo)
-        const newdata={
-        date: new Date(reservation.enteredDate)}
-        console.log (`the date of your reservation is ${newdata.date}`)
-    }
+  const handleDateChange = (event) => {
+    setSelectedDate(event.target.value);
+    enter(event.target.value)
+};
 
   return (
-    <div>
-      <form action="POST" onSubmit={submitHandler}>
-                <h1>RESERVE A TABLE</h1>
-                <label htmlFor="date">DATE: <input type="date" name="date" id="date" onChange={dateChange}/>
+    <div className=' grid justify-center items-center'>
+        {submit?
+        <div className='loading'>
+            <div>
+            <p>We are redirecting you to the customer details page</p>
+            </div>
+            <div>
+            <ReactLoading type="spin" color="#EE9972"
+            height={100} width={50} />
+
+            </div>
+        </div>  
+        :
+      <form className='p-[2em] md:px-[5em] mx-[2em] md:mx-[7em] max-w-[40em]  shadow-3xl'>
+                <h1 className='font-mar font-bold text-[2em] text-primary-10'>RESERVE A TABLE</h1>
+                <label htmlFor="date" className='flex items-center gap-[.5em] font-bold'>DATE: <input type="date" name="date" id="date" value={selectedDate} onChange={handleDateChange} className='border-[#f5f5f5] shadow-xl w-full bg-[#f5f5f5] rounded-full px-[1em] py-[.3em] max-w-[15em]'/>
                 </label>
-                <label htmlFor="time">TIME: <select name="time" id="" onChange={updateTimes}>
-                    {props.name.map((times)=>{
+                <label className='flex font-bold items-center gap-[.5em]' htmlFor="time">TIME: <select name="time" id="" className='border-[#f5f5f5] shadow-xl w-full bg-[#f5f5f5] rounded-full px-[1em] py-[.3em] max-w-[15em]' >
+                    {name.map((times)=>{
                         return <option value="">{times}</option>
                     })}
                     </select></label>
-                    <label for="guests">Number of guests
-                        <input type="number" placeholder="1" min="1" max="10" id="guests"/>
+                    <label for="guests"className='flex items-center gap-[.5em] font-bold'>Number of guests
+                        <input type="number" placeholder="1" min="1" max="10" id="guests" className='border-[#f5f5f5] shadow-xl w-full bg-[#f5f5f5] rounded-full px-[1em] py-[.3em] max-w-[15em]'/>
                     </label>
-                <select name="ocassion" id="" placeholder='OCASSION'>
+                <select name="ocassion" id="" className='border-[#f5f5f5] shadow-xl w-full bg-[#f5f5f5] rounded-full px-[1em] font-bold py-[.3em] max-w-[15em]'placeholder='OCASSION'>
                     <option value="">Anniversary</option>
                     <option value="">Birthday</option>
                     <option value="">Engagement</option>
                 </select>
-            <button><Link to='/reservations/customer-details' className=''>BOOK</Link></button>
-            </form>
+            <button onClick={handleSubmit} className="hover:text-highlight-10 hover:bg-highlight-20 px-[1em] py-[.5em] rounded-[16px] bg-primary-20 text-highlight-20 mt-[2em]">BOOK</button>
+      </form>        
+        }
     </div>
   )
 }

@@ -2,13 +2,19 @@ $highlight2:#333333;
 
 footer{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    padding: 3em 10em;
+    grid-template-columns: repeat(2,1fr);
     background-color: $highlight2;
     color: white;
 
     li{
         list-style: none;
         padding: .5em 0;
+    }
+}
+
+@media screen and (min-width:900px) {
+    footer{
+    grid-template-columns: repeat(4,1fr);
+
     }
 }
