@@ -10,7 +10,9 @@ function App() {
 const [enteredDate, setEnteredDate]=useState('')
 const [Times, setTimes]=useState(['10:00','11:00','12:00','1:00','2:00','3:00','4:00','5:00'])
 
-
+function getTime(date) {
+  const times=fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js')
+}
   return (
     <div>
       <Router>

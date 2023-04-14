@@ -1,8 +1,5 @@
 import React,{useState} from 'react'
 import './reservation.scss'
-import {Link} from "react-router-dom";
-import { Formik } from 'formik';
-import Spinner from './Spinner';
 import { useNavigate } from "react-router-dom";
 import ReactLoading from "react-loading";
 
